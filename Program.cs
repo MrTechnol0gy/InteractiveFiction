@@ -14,7 +14,7 @@ namespace InteractiveFiction
         {
             //int UIwidth = UI.GetLength(0); //gets the width of the UI array
             //int UIheight = UI.GetLength(1); //gets the length of the UI array
-            int width = 64;
+            int width = 96;
             int height = 32;
             int origx = Console.CursorLeft; 
             int origy = Console.CursorTop;
@@ -22,10 +22,10 @@ namespace InteractiveFiction
             int cursorTopMain = origy + 1;
             int cursorTopChoice = origx + 20; //cursor position for printing to the player choice area
             int cursorLeftChoice = origy + 1;
-            int cursorTopPrint = origx + 30; //sets cursor position for printing player output outside of the main game area/player choice area
+            int cursorTopPrint = origx + 34; //sets cursor position for printing player output outside of the main game area/player choice area
             int cursorLeftPrint = origy;
 
-            SetWindowSize(width, height);
+            //SetWindowSize(width, height);
             PrintUI(width, height);
             SetCursor(cursorLeftMain, cursorTopMain);
             Console.ReadKey();
