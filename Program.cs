@@ -25,7 +25,7 @@ namespace InteractiveFiction
             int cursorTopPrint = origx + 30; //sets cursor position for printing player output outside of the main game area/player choice area
             int cursorLeftPrint = origy;
 
-            //SetWindowSize(UIwidth, UIheight);
+            SetWindowSize(width, height);
             PrintUI(width, height);
             SetCursor(cursorLeftMain, cursorTopMain);
             Console.ReadKey();
