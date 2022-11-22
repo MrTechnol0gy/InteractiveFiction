@@ -10,8 +10,7 @@ namespace InteractiveFiction
     internal class Program
     {
         static bool GameOver;
-
-        static string[] Story = (string[])Story.Clone(); //ugh
+                
         static void Main(string[] args)
         {            
             int width = 96;
@@ -25,6 +24,9 @@ namespace InteractiveFiction
             int cursorTopPrint = origx + 34; //sets cursor position for printing player output outside of the main game area/player choice area
             int cursorLeftPrint = origy;
             GameOver = false;
+            int page = 0;
+            string currPage = Story.story[page]; //gets the string at the 'page' index
+            string[] strings = currPage.Split('%'); //prepares the split for the current page information
             
             while (GameOver == false)
             {
@@ -35,7 +37,12 @@ namespace InteractiveFiction
                 Console.ReadKey();
                 SetCursor(cursorLeftChoice, cursorTopChoice);
                 Console.ReadKey();
-                Console.WriteLine(Story[0]);
+                foreach (string s in strings)
+                {                    
+                    Console.WriteLine(s);
+                }
+                Console.ReadKey();
+                Console.WriteLine(Story.story[page]);
                 Console.ReadKey();
                 SetCursor(cursorLeftPrint, cursorTopPrint);
                 Console.ReadKey();
