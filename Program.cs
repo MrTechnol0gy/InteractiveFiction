@@ -33,8 +33,9 @@ namespace InteractiveFiction
                 Console.ReadKey();
                 SetCursor(cursorLeftChoice, cursorTopChoice);
                 Console.ReadKey();
-                Story[] s = new Story[0];
-                Console.WriteLine(Story.Split('%'));
+                //Story s = new Story();
+                //Split(s[0], 1, '&');
+                //Console.WriteLine(s);
                 Console.ReadKey();
                 SetCursor(cursorLeftPrint, cursorTopPrint);
                 Console.ReadKey();
