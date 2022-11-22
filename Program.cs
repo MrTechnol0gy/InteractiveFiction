@@ -9,7 +9,7 @@ namespace InteractiveFiction
 {
     internal class Program
     {
-        static bool GameOver;
+        public static bool gameOver;
                 
         static void Main(string[] args)
         {            
@@ -23,29 +23,37 @@ namespace InteractiveFiction
             int cursorLeftChoice = origy + 1;
             int cursorTopPrint = origx + 34; //sets cursor position for printing player output outside of the main game area/player choice area
             int cursorLeftPrint = origy;
-            GameOver = false;
+            gameOver = false;
             int page = 0;
             string currPage = Story.story[page]; //gets the string at the 'page' index
             string[] strings = currPage.Split('%'); //prepares the split for the current page information
+            int stringLength = strings.Length; //gets the length of the split string            
+            int y = 1;
             
-            while (GameOver == false)
-            {
-                UI.PrintUI(width, height);
-                SetCursor(cursorLeftMain, cursorTopMain);
-                Console.ReadKey();
-                Title.MainTitle();
-                Console.ReadKey();
-                SetCursor(cursorLeftChoice, cursorTopChoice);
-                Console.ReadKey();
-                foreach (string s in strings)
-                {                    
-                    Console.WriteLine(s);
+
+            UI.PrintUI(width, height);
+            SetCursor(cursorTopMain, cursorLeftMain);
+            Title.MainTitle();                
+
+            while (gameOver == false)
+            {   
+                for (int i = 0; i < ArtMain.Art.GetLength(0); i++)
+                {
+                    SetCursor(cursorTopMain, cursorLeftMain);
+                    for (int j = 0; j < ArtMain.Art.GetLength(1); j++)
+                    {
+                        Console.Write(ArtMain.Art[i, j]);
+                    }
                 }
-                Console.ReadKey();
-                Console.WriteLine(Story.story[page]);
-                Console.ReadKey();
+                SetCursor(cursorLeftChoice, cursorTopChoice);                                                   
+                foreach (string s in strings)
+                {   
+                    Console.WriteLine(s);                        
+                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
+                    y++;
+                }                                
                 SetCursor(cursorLeftPrint, cursorTopPrint);
-                Console.ReadKey();
+                PlayerChoice.Choice();
             }            
         }        
         

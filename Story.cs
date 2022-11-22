@@ -10,7 +10,9 @@ namespace InteractiveFiction
     {
         public static string[] story = new string[] 
         { 
-            "This is a test of the emergency story system.%Choice One%Choice Two%Page Number%Page Number%"
+            "This is a test of the emergency story system.%Choice One%Choice Two%Page Number%Page Number%",
+            "This is a second test of the emergency story system.%Choice One%Choice Two%Page Number%Page Number%",
+            "This is a third test of the emergency story system.%Choice One%Choice Two%Page Number%Page Number%"
         };
     }
 }
