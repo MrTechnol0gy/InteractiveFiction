@@ -10,6 +10,8 @@ namespace InteractiveFiction
     internal class Program
     {
         static bool GameOver;
+
+        static string[] Story = (string[])Story.Clone(); //ugh
         static void Main(string[] args)
         {            
             int width = 96;
@@ -33,9 +35,7 @@ namespace InteractiveFiction
                 Console.ReadKey();
                 SetCursor(cursorLeftChoice, cursorTopChoice);
                 Console.ReadKey();
-                //Story s = new Story();
-                //Split(s[0], 1, '&');
-                //Console.WriteLine(s);
+                Console.WriteLine(Story[0]);
                 Console.ReadKey();
                 SetCursor(cursorLeftPrint, cursorTopPrint);
                 Console.ReadKey();
