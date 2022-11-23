@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ArtMain.cs" />
     <Compile Include="ClearOut.cs" />
+    <Compile Include="Pages.cs" />
     <Compile Include="PlayerChoice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

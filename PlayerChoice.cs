@@ -18,11 +18,11 @@ namespace InteractiveFiction
             }
             else if (key.Key == ConsoleKey.A)
             {
-                
+                Program.choiceA = true;
             }
             else if (key.Key == ConsoleKey.D)
             {
-                
+                Program.choiceB = true;
             }                     
         }
     }

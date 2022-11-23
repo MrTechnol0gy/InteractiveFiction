@@ -10,6 +10,8 @@ namespace InteractiveFiction
     internal class Program
     {
         public static bool gameOver;
+        public static bool choiceA, choiceB;
+        public static int page;
                 
         static void Main(string[] args)
         {            
@@ -24,11 +26,13 @@ namespace InteractiveFiction
             int cursorTopPrint = origx + 34; //sets cursor position for printing player output outside of the main game area/player choice area
             int cursorLeftPrint = origy;
             gameOver = false;
-            int page = 0;
+            page = 0;
             string currPage = Story.story[page]; //gets the string at the 'page' index
             string[] strings = currPage.Split('%'); //prepares the split for the current page information
-            int stringLength = strings.Length; //gets the length of the split string            
+            //int stringLength = strings.Length; //gets the length of the split string            
             int y = 1;
+            choiceA = false;
+            choiceB = false;
             
 
             UI.PrintUI(width, height);
@@ -37,14 +41,14 @@ namespace InteractiveFiction
 
             while (gameOver == false)
             {   
-                for (int i = 0; i < ArtMain.Art.GetLength(0); i++)
-                {
-                    SetCursor(cursorTopMain, cursorLeftMain);
-                    for (int j = 0; j < ArtMain.Art.GetLength(1); j++)
-                    {
-                        Console.Write(ArtMain.Art[i, j]);
-                    }
-                }
+                //for (int i = 0; i < ArtMain.Art.GetLength(0); i++)
+                //{
+                //    SetCursor(cursorTopMain, cursorLeftMain);
+                //    for (int j = 0; j < ArtMain.Art.GetLength(1); j++)
+                //    {
+                //        Console.Write(ArtMain.Art[i, j]);
+                //    }
+                //}
                 SetCursor(cursorLeftChoice, cursorTopChoice);                                                   
                 foreach (string s in strings)
                 {   
@@ -54,6 +58,9 @@ namespace InteractiveFiction
                 }                                
                 SetCursor(cursorLeftPrint, cursorTopPrint);
                 PlayerChoice.Choice();
+                Pages.Page(page);
+                choiceA = false;
+                choiceB = false;
             }            
         }        
         
