@@ -8,7 +8,7 @@ namespace InteractiveFiction
 {
     internal class ClearOut
     {
-        public static string[] clear = new string[] //should this be a single dimension, or 2d? Future Richard, figure it out.
+        public static string[] clear = new string[] //should this be a single dimension, or 2d? Future Richard, figure it out. Future Richard says Unbelievable that you'd do this to me. It's Monday morning man. 
         {
 
         };
