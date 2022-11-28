@@ -26,9 +26,7 @@ namespace InteractiveFiction
             int cursorTopPrint = origx + 34; //sets cursor position for printing player output outside of the main game area/player choice area
             int cursorLeftPrint = origy;
             gameOver = false;
-            page = 0;
-            //string currPage = Story.story[page]; //gets the string at the 'page' index
-            //string[] strings = currPage.Split('%'); //prepares the split for the current page information
+            page = 0;            
             //int stringLength = strings.Length; //gets the length of the split string            
             int y = 1;
             choiceA = false;
@@ -40,15 +38,7 @@ namespace InteractiveFiction
             Title.MainTitle();                
 
             while (gameOver == false)
-            {
-                //for (int i = 0; i < ArtMain.Art.GetLength(0); i++)
-                //{
-                //    SetCursor(cursorTopMain, cursorLeftMain);
-                //    for (int j = 0; j < ArtMain.Art.GetLength(1); j++)
-                //    {
-                //        Console.Write(ArtMain.Art[i, j]);
-                //    }
-                //}
+            {                
                 string currPage = Story.story[page]; //gets the string at the 'page' index
                 string[] strings = currPage.Split('%'); //prepares the split for the current page information
                 SetCursor(cursorLeftChoice, cursorTopChoice);                                                   
