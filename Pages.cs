@@ -16,10 +16,12 @@ namespace InteractiveFiction
                     if (Program.choiceA == true)
                     {
                         Program.page = 1;
+                        return;
                     }
                     else if (Program.choiceB == true)
                     {
                         Program.page = 2;
+                        return;
                     }
                     break;
                 case 1:
@@ -35,21 +37,24 @@ namespace InteractiveFiction
                 case 2:
                     if (Program.choiceA == true)
                     {
-
+                        Program.page = 3;
+                        return;
                     }
                     else if (Program.choiceB == true)
                     {
-
+                        Program.page = 1;
+                        return;
                     }
                     break;
                 case 3:
                     if (Program.choiceA == true)
                     {
-
+                        Program.page = 0;
                     }
                     else if (Program.choiceB == true)
                     {
-
+                        Program.gameOver = true;
+                        return;
                     }
                     break;
                 case 4:

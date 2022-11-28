@@ -27,8 +27,8 @@ namespace InteractiveFiction
             int cursorLeftPrint = origy;
             gameOver = false;
             page = 0;
-            string currPage = Story.story[page]; //gets the string at the 'page' index
-            string[] strings = currPage.Split('%'); //prepares the split for the current page information
+            //string currPage = Story.story[page]; //gets the string at the 'page' index
+            //string[] strings = currPage.Split('%'); //prepares the split for the current page information
             //int stringLength = strings.Length; //gets the length of the split string            
             int y = 1;
             choiceA = false;
@@ -40,7 +40,7 @@ namespace InteractiveFiction
             Title.MainTitle();                
 
             while (gameOver == false)
-            {   
+            {
                 //for (int i = 0; i < ArtMain.Art.GetLength(0); i++)
                 //{
                 //    SetCursor(cursorTopMain, cursorLeftMain);
@@ -49,6 +49,8 @@ namespace InteractiveFiction
                 //        Console.Write(ArtMain.Art[i, j]);
                 //    }
                 //}
+                string currPage = Story.story[page]; //gets the string at the 'page' index
+                string[] strings = currPage.Split('%'); //prepares the split for the current page information
                 SetCursor(cursorLeftChoice, cursorTopChoice);                                                   
                 foreach (string s in strings)
                 {   
