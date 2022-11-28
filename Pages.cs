@@ -50,6 +50,7 @@ namespace InteractiveFiction
                     if (Program.choiceA == true)
                     {
                         Program.page = 0;
+                        return;
                     }
                     else if (Program.choiceB == true)
                     {
