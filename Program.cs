@@ -27,13 +27,10 @@ namespace InteractiveFiction
             int cursorTopPrint = origx + 34; //sets cursor position for printing player input outside of the main game area/player choice area
             int cursorLeftPrint = origy;
             gameOver = false;
-            page = 0;            
-            //int stringLength = strings.Length; //gets the length of the split string            
+            page = 0;  
             int y = 1;
             choiceA = false;
             choiceB = false;
-            
-
 
             while (gameOver == false)
             {   
