@@ -57,14 +57,21 @@ namespace InteractiveFiction
                     SetCursor(cursorLeftChoice, cursorTopChoice + y);
                     Console.WriteLine(s);                        
                     y++;
-                }                                
-                SetCursor(cursorLeftPrint, cursorTopPrint);
-                PlayerChoice.Choice(); //takes the player choice and flips the appropriate bool
-                Pages.Page(page); //changes the page index based on player input
-                choiceA = false;
-                choiceB = false;
-                y = 1;
-                Console.Clear();
+                }
+                if (strings.GetLength(0) < 5) //checks if the current page is an 'end page' (denoted as a page with less than five elements)
+                {
+                    //code go here
+                }
+                else
+                {
+                    SetCursor(cursorLeftPrint, cursorTopPrint);
+                    PlayerChoice.Choice(); //takes the player choice and flips the appropriate bool
+                    Pages.Page(); //changes the page index based on player input
+                    choiceA = false;
+                    choiceB = false;
+                    y = 1;
+                    Console.Clear();
+                }
             }            
         }        
         
