@@ -13,6 +13,7 @@ namespace InteractiveFiction
         public static bool choiceA, choiceB;
         public static int page;
         public static bool titleScreen = false;
+        public static string firstPage, secondPage;
                 
         static void Main(string[] args)
         {            
@@ -31,6 +32,8 @@ namespace InteractiveFiction
             int y = 1;
             choiceA = false;
             choiceB = false;
+            string storyline;
+            string firstChoice, secondChoice;
 
             while (gameOver == false)
             {   
@@ -50,20 +53,33 @@ namespace InteractiveFiction
                     page++;
                     y = 1;
                 }
+
                 string currPage = Story.story[page]; //gets the string at the 'page' index
-                string[] strings = currPage.Split('%'); //prepares the split for the current page information                                                                   
-                foreach (string s in strings)
-                {   
-                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
-                    Console.WriteLine(s);                        
-                    y++;
-                }
-                if (strings.GetLength(0) < 5) //checks if the current page is an 'end page' (denoted as a page with less than five elements)
+                string[] strings = currPage.Split('%'); //prepares the split for the current page information
+                                                        //
+                if (strings.GetLength(0) < 5) //figure out how to end the game gracefully, cause it ain't this chief
                 {
-                    //code go here
+                    gameOver = true;
                 }
                 else
                 {
+                    storyline = strings[0];
+                    firstChoice = strings[1];
+                    secondChoice = strings[2];
+                    firstPage = strings[3];
+                    secondPage = strings[4];
+
+                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
+                    Console.WriteLine(storyline);
+                    y++;
+                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
+                    Console.Write("A: "); //if you change what key to press, also change it in PlayerChoice.cs
+                    Console.WriteLine(firstChoice);
+                    y++;
+                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
+                    Console.Write("D: "); //if you change what key to press, also change it in PlayerChoice.cs
+                    Console.WriteLine(secondChoice);
+                
                     SetCursor(cursorLeftPrint, cursorTopPrint);
                     PlayerChoice.Choice(); //takes the player choice and flips the appropriate bool
                     Pages.Page(); //changes the page index based on player input

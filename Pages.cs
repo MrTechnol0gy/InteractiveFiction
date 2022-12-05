@@ -14,13 +14,13 @@ namespace InteractiveFiction
             
             if (Program.choiceA == true)
             {
-                x = Convert.ToInt32(Story.story[4]);
+                x = Int32.Parse(Program.firstPage);
                 Program.page = x;
                 return;
             }
             else if (Program.choiceB == true)
             {
-                x = Convert.ToInt32(Story.story[5]);
+                x = Int32.Parse(Program.secondPage);
                 Program.page = x;
                 return;
             } 
