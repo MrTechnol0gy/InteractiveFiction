@@ -57,9 +57,20 @@ namespace InteractiveFiction
                 string currPage = Story.story[page]; //gets the string at the 'page' index
                 string[] strings = currPage.Split('%'); //prepares the split for the current page information
                                                         //
-                if (strings.GetLength(0) < 5) //figure out how to end the game gracefully, cause it ain't this chief
+                if (strings.GetLength(0) < 5)
                 {
-                    gameOver = true;
+                    storyline = strings[0];                    
+
+                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
+                    Console.WriteLine(storyline);
+                    y++;
+                    SetCursor(cursorLeftChoice, cursorTopChoice + y);
+                    Console.WriteLine("Press any key to return to the main menu.");
+                    SetCursor(cursorLeftPrint, cursorTopPrint);
+                    Console.ReadKey();
+                    y = 1;
+                    Console.Clear();
+                    page = 1; //this should send them back to the main menu once it's built
                 }
                 else
                 {
